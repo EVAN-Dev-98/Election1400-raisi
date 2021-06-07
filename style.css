@@ -24,6 +24,7 @@ body{
     padding: 20px;
     border-radius: .5em;
     background: #ffffff;
+    min-height: 95vh;
 }
 a{
     text-decoration: none;
