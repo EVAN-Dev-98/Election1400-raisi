@@ -13,22 +13,23 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <title>Merge Image</title>
 </head>
-<body dir="rtl">
-<form action="image-process.php" method="post" enctype="multipart/form-data" class="container mt-4" id="form">
-    <section class="row">
-        <section class="col-4 d-none d-lg-block"><img src="banner1.jpg" alt="temp" class="img-fluid"></section>
-        <section class="col-12 col-lg-4 text-center"><img src="evan.jpg" alt="temp" class="img-fluid" width='256' height='256'></section>
-        <section class="col-4 d-none d-lg-block"><img src="banner2.jpg" alt="temp" class="img-fluid"></section>
-    </section>
-    <section class="form-floating mt-4">
-        <section class="my-3">
-            <label for="photo" class="form-label">تصویر خود را انتخاب کنید</label>
-            <input class="form-control" name="photo" type="file" id="photo" accept="image/png, image/gif, image/jpeg">
+<body>
+<section class="page">
+    <form action="image-process.php" method="post" enctype="multipart/form-data" class="container mt-4" id="form">
+        <section class="row justify-content-center text-center">
+            <section class="col-12 col-lg-4"><img src="evan.jpg" alt="temp" class="img-fluid finaly"></section>
         </section>
-        <input type="submit" class="w-100 btn-lg btn btn-outline-primary btn-merge" id="submit" name="submit" value="بارگذاری">
-    </section>
-    <section class="w-100 mt-3 text-center" id="message"></section>
-    <script src="ajax.js"></script>
-</form>
+        <section class="form-floating mt-4">
+            <section class="d-flex justify-content-center my-3">
+                <label for="photo" class="btn btn-lg btn-outline-primary" id="photo-label">انتخاب تصویر</label>
+                <input name="photo" type="file" id="photo" accept="image/png, image/gif, image/jpeg" oninput="settext()">
+            </section>
+            <input type="submit" class="w-100 btn-lg btn btn-outline-success btn-merge" id="submit" name="submit" value="بارگذاری">
+        </section>
+        <section class="w-100 mt-3 text-center" id="message"></section>
+        <script src="input.js"></script>
+        <script src="ajax.js"></script>
+    </form>
+</section>
 </body>
 </html>

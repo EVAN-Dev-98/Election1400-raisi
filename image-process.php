@@ -46,6 +46,7 @@ switch ($imageType){
 }
 // Create frame image resources from the files
 $frame_image = imagecreatefrompng($frame);
+imagesavealpha($frame_image, true);
 
 // resize user image to x,y size
 $user_image = imageResize($user_image,$sourceProperties[0],$sourceProperties[1]);
@@ -62,9 +63,9 @@ switch ($imageType){
 
     case IMAGETYPE_PNG:
         $imageSource = $folderPath . $fileNewName. "." . $ext;
-        if ($uploadOk == 1 && imagepng($final_img,$imageSource)){
+        if ($uploadOk == 1 && imagepng($final_img,$imageSource,0)){
             echo "<p class='w-100 mt-3 mb-3'>تصویر با موفقیت آپلود شد</p>";
-            echo "<img src='{$imageSource}' alt='image' class='img-fluid' width='256' height='256'>";
+            echo "<img src='{$imageSource}' alt='image' class='img-fluid finaly'>";
         }
         else
             echo "<p class='w-100 mt-3 mb-3'>در هنگام آپلود تصویر خطایی رخ داده است!</p>";
@@ -74,7 +75,7 @@ switch ($imageType){
         $imageSource = $folderPath . $fileNewName. "." . $ext;
         if ($uploadOk == 1 && imagegif($final_img,$imageSource)){
             echo "<p class='w-100 mt-3 mb-3'>تصویر با موفقیت آپلود شد</p>";
-            echo "<img src='{$imageSource}' alt='image' class='img-fluid' width='256' height='256'>";
+            echo "<img src='{$imageSource}' alt='image' class='img-fluid finaly'>";
         }
         else
             echo "<p class='w-100 mt-3 mb-3'>در هنگام آپلود تصویر خطایی رخ داده است!</p>";
@@ -82,9 +83,9 @@ switch ($imageType){
 
     case IMAGETYPE_JPEG:
         $imageSource = $folderPath . $fileNewName. "." . $ext;
-        if ($uploadOk == 1 && imagejpeg($final_img,$imageSource)){
+        if ($uploadOk == 1 && imagejpeg($final_img,$imageSource,100)){
             echo "<p class='w-100 mt-3 mb-3'>تصویر با موفقیت آپلود شد</p>";
-            echo "<img src='{$imageSource}' alt='image' class='img-fluid' width='256' height='256'>";
+            echo "<img src='{$imageSource}' alt='image' class='img-fluid finaly'>";
         }
         else
             echo "<p class='w-100 mt-3 mb-3'>در هنگام آپلود تصویر خطایی رخ داده است!</p>";
@@ -96,8 +97,8 @@ switch ($imageType){
         exit();
 }
 
-echo "<a class='d-block text-danger text-center p-2 my-3' href='$imageSource' download=''>دانلود تصویر پروفایل</a>";
-echo "<p class='w-100 text-center mb-4 bg-dark text-white p-2 rounded-3'>تهیه شده توسط EVAN</p>";
+echo "<a class='d-block text-danger text-center p-2 my-3' href='$imageSource' download=''>( دانلود تصویر پروفایل )</a>";
+echo "<p class='w-100 text-center mb-3 bg-dark text-white p-2 rounded-3'>تهیه شده توسط حمایت مردم</p>";
 
 function imageResize($imageResourceId,$width,$height) {
     global $x , $y;

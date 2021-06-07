@@ -3,6 +3,28 @@
     margin: 0;
     padding: 0;
 }
+body{
+    background: linear-gradient(120deg , #F7DC6F , #F1948A , #85C1E9 , #76D7C4 , #F8C471) fixed;
+    animation: gradient 20s ease infinite;
+    background-size: 1500% 1500%;
+    padding: 20px;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0 50%
+    }
+}
+.page{
+    padding: 20px;
+    border-radius: .5em;
+    background: #ffffff;
+}
 a{
     text-decoration: none;
     color: #000;
@@ -12,4 +34,13 @@ a{
 }
 .image img{
     margin: auto;
+}
+img.finaly{
+    width: 256px;
+    height: 256px;
+    box-shadow: 0 0 8px #000000;
+    border-radius: .5em;
+}
+#photo{
+    display: none;
 }
